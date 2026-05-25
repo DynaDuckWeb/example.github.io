@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>example.github.io</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #0b1020;
+    }
+
+    /* animated gradient background */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(45deg, #1e3c72, #2a5298, #6a11cb, #2575fc);
+      background-size: 300% 300%;
+      animation: bg 12s ease infinite;
+      z-index: -2;
+    }
+
+    @keyframes bg {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* floating blobs */
+    .blob {
+      position: fixed;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.4;
+      z-index: -1;
+      animation: float 10s infinite ease-in-out;
+    }
+
+    .b1 { background: #6a11cb; top: 10%; left: 10%; }
+    .b2 { background: #2575fc; bottom: 10%; right: 10%; animation-delay: 2s; }
+    .b3 { background: #00c6ff; top: 60%; left: 60%; animation-delay: 4s; }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-25px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.45);
+      padding: 30px;
+      border-radius: 16px;
+      max-width: 520px;
+      backdrop-filter: blur(10px);
+      animation: pop 1s ease;
+    }
+
+    @keyframes pop {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+
+    p {
+      margin: 8px 0;
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      margin-top: 15px;
+      display: inline-block;
+      padding: 12px 18px;
+      background: #00c6ff;
+      color: black;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      background: #38bdf8;
+    }
+
+    .small {
+      opacity: 0.8;
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+
+  <div class="card">
+    <h1>Hey :)</h1>
+
+    <p>Yes I got <strong>example.github.io</strong></p>
+
+    <p>Im 12 and made this site :D</p>
+
+    <p>Im also the owner of <strong>DynaDuck.github.io</strong></p>
+
+    <a class="btn" href="https://revolut.me/ercvi_kn_3kmb" target="_blank">
+      Donate
+    </a>
+
+    <p class="small">God bless you :D</p>
+  </div>
+</body>
+</html>
